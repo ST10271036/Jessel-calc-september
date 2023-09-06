@@ -14,8 +14,8 @@ function App() {
     setSecondInput(e.target.value);
   };
 
-  const updateSelectedOperation = (e) => {
-    setSelectedOperation(e.target.value);
+  const selectOperation = (operation) => {
+    setSelectedOperation(operation);
   };
 
   const calculateResult = () => {
@@ -66,13 +66,10 @@ function App() {
         />
       </div>
       <div style={{ margin: '20px' }}>
-        <select value={selectedOperation} onChange={updateSelectedOperation}>
-          <option value="">Select operation</option>
-          <option value="+">+</option>
-          <option value="-">-</option>
-          <option value="*">*</option>
-          <option value="/">/</option>
-        </select>
+        <button onClick={() => selectOperation('+')}>+</button>
+        <button onClick={() => selectOperation('-')}>-</button>
+        <button onClick={() => selectOperation('*')}>*</button>
+        <button onClick={() => selectOperation('/')}>/</button>
       </div>
       <div style={{ margin: '20px' }}>
         <button onClick={calculateResult}>Calculate</button>
